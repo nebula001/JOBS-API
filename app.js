@@ -1,9 +1,11 @@
 require("dotenv").config();
 const express = require("express");
 const authRoute = require("./routes/auth");
+const jobRoute = require("./routes/jobs");
 const connectDB = require("./db/connect");
 const notFoundMiddleware = require("./middlewares/not-found");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
+const authenticationMiddleware = require("./middlewares/authentication");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/jobs", authenticationMiddleware, jobRoute);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
