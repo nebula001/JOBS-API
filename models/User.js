@@ -9,7 +9,7 @@ const stricterEmailRegex =
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: [true, "Name must be provided"],
+    required: [true, "Name must be provided"],
     minLength: 3,
     maxLength: 50,
   },
