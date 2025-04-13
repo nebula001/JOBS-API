@@ -1,21 +1,23 @@
+const { StatusCodes } = require("http-status-codes");
+
 const getAllJobs = async (req, res) => {
-  return res.status(200).json({ msg: "ALL Jobs" });
+  return res.status(StatusCodes.OK).json({ msg: "ALL Jobs" });
 };
 
 const getSingleJob = async (req, res) => {
-  return res.status(200).json({ msg: "Single Job" });
+  return res.status(StatusCodes.OK).json({ msg: "Single Job" });
 };
 
 const createJob = async (req, res) => {
-  return res.status(201).json({ msg: "Job Created" });
+  return res.status(StatusCodes.CREATED).json({ msg: "Job Created" });
 };
 
 const UpdateJob = async (req, res) => {
-  return res.status(201).json({ msg: "Job Updated" });
+  return res.status(StatusCodes.OK).json({ msg: "Job Updated" });
 };
 
 const deleteJob = async (req, res) => {
-  return res.status(200).json({ msg: "Job deleted" });
+  return res.status(StatusCodes.OK).json({ msg: "Job deleted" });
 };
 
 module.exports = { getAllJobs, getSingleJob, createJob, UpdateJob, deleteJob };
