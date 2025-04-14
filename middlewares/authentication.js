@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const { Unauthenticated } = require("../errors");
 
 const authenticationMiddleware = (req, res, next) => {
-  const authHeader = req.headers.authorization || {};
+  const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     throw new Unauthenticated("Not Authenticated");
   }
