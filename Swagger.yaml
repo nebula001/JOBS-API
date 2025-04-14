@@ -1,0 +1,127 @@
+openapi: "3.0.0"
+info:
+  title: Jobs API
+  version: "1.0"
+servers:
+  - url: "https://jobs-api-1yzd.onrender.com/api/v1"
+paths:
+  /auth/register:
+    post:
+      summary: Register User
+      responses:
+        "200":
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              example:
+                name: Example
+                email: example@gmail.com
+                password: "1234"
+  /auth/login:
+    post:
+      summary: Login User
+      responses:
+        "200":
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              example:
+                email: aameer@myemail.com
+                password: Pass
+  /jobs:
+    get:
+      summary: Get All Jobs
+      responses:
+        "200":
+          description: Success
+      security:
+        - bearerAuth: []
+    post:
+      summary: Create Job
+      responses:
+        "200":
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company:
+                  type: string
+                position:
+                  type: string
+              example:
+                company: OpenAi
+                position: Intern
+      security:
+        - bearerAuth: []
+  /jobs/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: The job ID
+    get:
+      summary: Get Single Job
+      responses:
+        "200":
+          description: Success
+      security:
+        - bearerAuth: []
+    patch:
+      summary: Update Job
+      responses:
+        "200":
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company:
+                  type: string
+                position:
+                  type: string
+              example:
+                company: Meta
+                position: senior developer
+      security:
+        - bearerAuth: []
+    delete:
+      summary: Delete Job
+      responses:
+        "200":
+          description: Success
+      security:
+        - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
