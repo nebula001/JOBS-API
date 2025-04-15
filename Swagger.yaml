@@ -4,6 +4,10 @@ info:
   version: "1.0"
 servers:
   - url: "https://jobs-api-1yzd.onrender.com/api/v1"
+    description: Production Server
+
+  - url: "http://localhost:3000/api/v1"
+    description: Local Development Server
 paths:
   /auth/register:
     post:

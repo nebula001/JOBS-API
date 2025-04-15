@@ -1,0 +1,92 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container */
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Text */
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}
+
+/* Button */
+.button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+}
+
+.toggle-wrapper {
+  margin-top: 1.5rem;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.toggle-button:hover {
+  color: #374151;
+}
+
+/* Dark mode */
+body.dark {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+body.dark .container {
+  background-color: #1f2937;
+}
+
+body.dark p {
+  color: #d1d5db;
+}
+
+body.dark .toggle-button {
+  color: #9ca3af;
+}
