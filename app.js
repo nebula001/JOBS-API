@@ -5,7 +5,7 @@ const express = require("express");
 const xssMiddleware = require("./middlewares/xss-filter");
 const helmet = require("helmet");
 const cors = require("cors");
-const rateLimit = require("express-rate-limit");
+const { rateLimit } = require("express-rate-limit");
 
 const swaggerUI = require("swagger-ui-express");
 const YAML = require("js-yaml");
